@@ -1,0 +1,33 @@
+form {
+    width: 300px;
+    text-align: left;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 10px;
+    margin: auto;
+}
+
+h2 {
+    text-align: center;
+}
+
+select, input, button {
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box; 
+    margin-bottom: 20px;
+    font-size: x-large;
+}
+
+span {
+    color: red;
+    margin: 5px 20px;
+    position: absolute; 
+}
+
+form > .ng-invalid.ng-touched {
+    background-color: pink;
+    border: 2px solid red
+
+}
+

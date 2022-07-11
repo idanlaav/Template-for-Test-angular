@@ -1,0 +1,20 @@
+<div *ngIf="clothing">
+
+    <table>
+        <thead>
+            <tr>
+                <th>Clothing Type</th>
+                <th>Clothing Price</th>
+                <th>Clothing Discount</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let c of clothing">
+                <td>{{c.typeName}}</td>
+                <td>{{c.price}}</td>
+                <td>{{c.discount}}</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>

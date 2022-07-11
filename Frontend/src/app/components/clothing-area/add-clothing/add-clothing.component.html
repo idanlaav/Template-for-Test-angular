@@ -1,0 +1,29 @@
+<div>
+
+    <form (ngSubmit)="send()" #clothingForm="ngForm">
+
+        <h2>Add Clothing</h2>
+
+        <label>Clothing Type: </label>
+        <select name="typeId" [(ngModel)]="clothing.typeId" required #typeControl="ngModel">
+            <option selected disabled value="">Select Clothing Type...</option>
+            <option *ngFor="let type of clothingTypes" [value]="type.typeId">{{type.typeName}}</option>
+        </select>
+        <span *ngIf="typeControl.errors?.['required'] && typeControl.touched">Missing Type</span>
+
+        <label>Price: </label>
+        <input type="number" name="price" [(ngModel)]="clothing.price" required min="0" max="3000" #priceControl="ngModel">
+        <span *ngIf="priceControl.errors?.['required'] && priceControl.touched">Missing Price</span>
+        <span *ngIf="priceControl.errors?.['min'] && priceControl.touched">Stock can't be negative</span>
+        <span *ngIf="priceControl.errors?.['max'] && priceControl.touched">Stock can't exceed 3000</span>
+
+        <label>Discount: </label>
+        <input type="number" name="discount" [(ngModel)]="clothing.discount" required min="0" max="100" #discountControl="ngModel">
+        <span *ngIf="discountControl.errors?.['required'] && discountControl.touched">Missing Discount</span>
+        <span *ngIf="discountControl.errors?.['min'] && discountControl.touched">Stock can't be negative</span>
+        <span *ngIf="discountControl.errors?.['max'] && discountControl.touched">Stock can't exceed 100</span>
+
+        <button [disabled]="clothingForm.invalid">Add</button>
+
+    </form>
+</div>

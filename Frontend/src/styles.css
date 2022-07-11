@@ -1,0 +1,13 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    font-size: x-large;
+    background-image: linear-gradient(230deg,lightblue, white);
+    overflow: scroll;
+}
+
+a {
+    color: rgb(50, 123, 148);
+    font-weight: bold;
+}
